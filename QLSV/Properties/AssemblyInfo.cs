@@ -4,11 +4,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("QLSV")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Quản lý Sinh viên")]
+[assembly: AssemblyDescription("Quản lý thông tin và dữ liệu cá nhân của Sinh viên trường ĐH Công nghệ TP.HCM - Hutech")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("QLSV")]
+[assembly: AssemblyCompany("ĐH Công nghệ TP.HCM - Hutech")]
+[assembly: AssemblyProduct("Phần mềm Quản lý thông tin Sinh viên")]
 [assembly: AssemblyCopyright("Copyright ©  2024")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

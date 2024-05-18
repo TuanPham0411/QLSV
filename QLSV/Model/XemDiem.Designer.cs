@@ -41,10 +41,10 @@
             this.cmbMaso = new System.Windows.Forms.ComboBox();
             this.cmbHoten = new System.Windows.Forms.ComboBox();
             this.kHOABindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.txtTenkhoa = new System.Windows.Forms.TextBox();
             this.ketQuaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.grvDiem = new System.Windows.Forms.DataGridView();
             this.btnXem = new System.Windows.Forms.Button();
+            this.txtKhoa = new System.Windows.Forms.TextBox();
             maSoLabel = new System.Windows.Forms.Label();
             hoTenLabel = new System.Windows.Forms.Label();
             tenKhoaLabel = new System.Windows.Forms.Label();
@@ -72,15 +72,6 @@
             hoTenLabel.Size = new System.Drawing.Size(45, 13);
             hoTenLabel.TabIndex = 2;
             hoTenLabel.Text = "Họ Tên:";
-            // 
-            // tenKhoaLabel
-            // 
-            tenKhoaLabel.AutoSize = true;
-            tenKhoaLabel.Location = new System.Drawing.Point(29, 69);
-            tenKhoaLabel.Name = "tenKhoaLabel";
-            tenKhoaLabel.Size = new System.Drawing.Size(56, 13);
-            tenKhoaLabel.TabIndex = 4;
-            tenKhoaLabel.Text = "Tên Khoa:";
             // 
             // qlsv
             // 
@@ -138,14 +129,6 @@
             this.kHOABindingSource.DataMember = "KHOA";
             this.kHOABindingSource.DataSource = this.qlsv;
             // 
-            // txtTenkhoa
-            // 
-            this.txtTenkhoa.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.kHOABindingSource, "TenKhoa", true));
-            this.txtTenkhoa.Location = new System.Drawing.Point(91, 66);
-            this.txtTenkhoa.Name = "txtTenkhoa";
-            this.txtTenkhoa.Size = new System.Drawing.Size(149, 21);
-            this.txtTenkhoa.TabIndex = 5;
-            // 
             // ketQuaBindingSource
             // 
             this.ketQuaBindingSource.DataMember = "KetQua";
@@ -170,15 +153,31 @@
             this.btnXem.UseVisualStyleBackColor = true;
             this.btnXem.Click += new System.EventHandler(this.btnXem_Click);
             // 
+            // tenKhoaLabel
+            // 
+            tenKhoaLabel.AutoSize = true;
+            tenKhoaLabel.Location = new System.Drawing.Point(29, 71);
+            tenKhoaLabel.Name = "tenKhoaLabel";
+            tenKhoaLabel.Size = new System.Drawing.Size(52, 13);
+            tenKhoaLabel.TabIndex = 7;
+            tenKhoaLabel.Text = "Tên Khoa";
+            // 
+            // txtKhoa
+            // 
+            this.txtKhoa.Location = new System.Drawing.Point(91, 66);
+            this.txtKhoa.Name = "txtKhoa";
+            this.txtKhoa.Size = new System.Drawing.Size(149, 21);
+            this.txtKhoa.TabIndex = 8;
+            // 
             // XemDiem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(332, 322);
+            this.ClientSize = new System.Drawing.Size(341, 330);
+            this.Controls.Add(this.txtKhoa);
+            this.Controls.Add(tenKhoaLabel);
             this.Controls.Add(this.btnXem);
             this.Controls.Add(this.grvDiem);
-            this.Controls.Add(tenKhoaLabel);
-            this.Controls.Add(this.txtTenkhoa);
             this.Controls.Add(hoTenLabel);
             this.Controls.Add(this.cmbHoten);
             this.Controls.Add(maSoLabel);
@@ -208,9 +207,9 @@
         private qlsvTableAdapters.KHOATableAdapter kHOATableAdapter;
         private System.Windows.Forms.BindingSource kHOABindingSource;
         private qlsvTableAdapters.KetQuaTableAdapter ketQuaTableAdapter;
-        private System.Windows.Forms.TextBox txtTenkhoa;
         private System.Windows.Forms.BindingSource ketQuaBindingSource;
         private System.Windows.Forms.DataGridView grvDiem;
         private System.Windows.Forms.Button btnXem;
+        private System.Windows.Forms.TextBox txtKhoa;
     }
 }

@@ -14,6 +14,9 @@ namespace QLSV.Model
 {
     public partial class XemDiem : XtraForm
     {
+        private string checkKhoa;
+        private string checkMakhoa;
+
         public XemDiem()
         {
             InitializeComponent();
@@ -28,14 +31,15 @@ namespace QLSV.Model
             this.sinhVienTableAdapter.Fill(this.qlsv.SinhVien);
         }
 
-        private void cmbChange_SelectedIndexChanged(object sender, EventArgs e)
+        private void load_Combobox()
         {
             try
             {
                 DataTable dt = sinhVienTableAdapter.GetDataBy(int.Parse(cmbMaso.Text));
                 string maso = dt.Rows[0]["MaKhoa"].ToString();
                 DataTable dt_1 = kHOATableAdapter.GetDataBy(maso);
-                txtTenkhoa.Text = dt_1.Rows[0]["TenKhoa"].ToString();
+                checkKhoa = dt_1.Rows[0]["TenKhoa"].ToString();
+                checkMakhoa = dt_1.Rows[0]["MaKhoa"].ToString();
             }
             catch (Exception ex)
             {
@@ -43,13 +47,20 @@ namespace QLSV.Model
             }
         }
 
+        private void cmbChange_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            load_Combobox();
+        }
+
         private void btnXem_Click(object sender, EventArgs e)
         {
-            DataTable dt = ketQuaTableAdapter.GetDataBy(int.Parse(cmbMaso.Text));
-            grvDiem.DataSource = dt;
-
-            if (grvDiem.Columns.Count >= 3)
+            grvDiem.DataSource = null;
+            load_Combobox();
+            if (checkKhoa.TrimEnd() == txtKhoa.Text || checkMakhoa.TrimEnd() == txtKhoa.Text)
             {
+                DataTable dt = ketQuaTableAdapter.GetDataBy(int.Parse(cmbMaso.Text));
+                grvDiem.DataSource = dt;
+
                 DataGridViewColumn col1 = grvDiem.Columns["MaMH"];
                 DataGridViewColumn col3 = grvDiem.Columns["TenMH"];
 
@@ -59,8 +70,10 @@ namespace QLSV.Model
 
                 col1.Visible = false;
             }
-
-
+            else
+            {
+                MessageBox.Show("Thông tin Khoa chưa chính xác!\nVui lòng nhập lại.");
+            }
         }
     }
 }

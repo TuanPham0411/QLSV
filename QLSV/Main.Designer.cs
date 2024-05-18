@@ -138,6 +138,7 @@
             // 
             // btnExit
             // 
+            this.btnExit.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
             this.btnExit.Caption = "Thoát";
             this.btnExit.Id = 9;
             this.btnExit.ImageOptions.Image = global::QLSV.Properties.Resources.editingfillright_16x16;
@@ -177,6 +178,7 @@
             this.barButtonItem3.Caption = "Hỗ trợ";
             this.barButtonItem3.Id = 12;
             this.barButtonItem3.Name = "barButtonItem3";
+            this.barButtonItem3.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem3_ItemClick);
             // 
             // bar3
             // 
@@ -195,7 +197,7 @@
             // 
             // barStaticItem1
             // 
-            this.barStaticItem1.Caption = "connection";
+            this.barStaticItem1.Caption = "Connected";
             this.barStaticItem1.Id = 1;
             this.barStaticItem1.Name = "barStaticItem1";
             // 

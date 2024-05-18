@@ -113,5 +113,20 @@ namespace QLSV
             sv.MdiParent = this;
             sv.Show();
         }
+
+        private void barButtonItem3_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            foreach (Form f in this.MdiChildren)
+            {
+                if (f.Name == "About")
+                {
+                    f.Activate();
+                    return;
+                }
+            }
+            About sv = new About();
+            sv.MdiParent = this;
+            sv.Show();
+        }
     }
 }
